@@ -47,6 +47,7 @@
   color: #524a4d;
   margin-bottom: 15px;
 }
+
 .stats {
   display: flex;
   flex-direction: row;
@@ -59,7 +60,7 @@
   border-bottom-left-radius: 10px;
 }
 
-.stats > li {
+.stats>li {
   display: flex;
   flex-direction: column;
   align-items: center;
