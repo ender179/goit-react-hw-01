@@ -1,23 +1,31 @@
-import PropTypes from "prop-types";
-import { FriendListWrapper } from "./FriendList.module.jsx";
-import { FriendListItem } from "components/FriendListItem/FriendListItem";
+import PropTypes from 'prop-types';
+import css from './FriendList.module.css';
+import { FriendListItem } from './FriendListItem';
 
-export const FriendList = ({friends}) => {
-    return (
-        <FriendListWrapper>
-            {friends.map(({ id, avatar, name, isOnline }) => {
-                return (
-                    <FriendListItem
-                        key={id}
-                        status={isOnline}
-                        avatar={avatar}
-                        name={name}
-                    />);
-            })
-            }        
-        </FriendListWrapper>);
-}
+export const FriendList = ({ friends }) => {
+  return (
+    <ul className={css.friendList}>
+      {friends.map(friend => {
+        return (
+          <FriendListItem
+            key={friend.id}
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+          />
+        );
+      })}
+    </ul>
+  );
+};
 
 FriendList.propTypes = {
-    friends: PropTypes.array
-}
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+};

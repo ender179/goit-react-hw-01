@@ -1,37 +1,41 @@
 import PropTypes from 'prop-types';
+import css from './TransactionHistory.module.css';
+import { TransactionItem } from './TransactionItem';
 
-import { TableTh, TableThead, TableTbody, TableTr, TransactionTable } from './TransactionHistory.module';
+export const TransactionHistory = ({ transactions }) => {
+  return (
+    <table className={css.transactionHistoryTable}>
+      <thead>
+        <tr className={css.transactionHistoryTableHeader}>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
 
-export const TransactionHistory = ({transactions}) => {
-    return (
-        <TransactionTable>
-            <TableThead>
-                <TableTr>
-                    <TableTh>Type</TableTh>
-                    <TableTh>Amount</TableTh>
-                    <TableTh>Currency</TableTh>
-                </TableTr>
-            </TableThead>
-            <TableTbody>
-                {transactions.map(({ id, type, amount, currency }) => {
-                    return (<TableTr key={id}>
-                            <TableTh>{type}</TableTh>
-                            <TableTh>{amount}</TableTh>
-                            <TableTh>{currency}</TableTh>
-                        </TableTr>)  
-                    })
-                }
-            </TableTbody>
-        </TransactionTable>  
-    );
-}
+      <tbody className={css.transactionHistoryTableBody}>
+        {transactions.map(item => {
+          return (
+            <TransactionItem
+              key={item.id}
+              type={item.type}
+              amount={item.amount}
+              currency={item.currency}
+            />
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
 
 TransactionHistory.propTypes = {
-    transactions: PropTypes.arrayOf(PropTypes.shape(
-        {
-          type: PropTypes.string,
-          amount: PropTypes.number,
-          currency: PropTypes.string
-        }
-    )) 
-}
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
