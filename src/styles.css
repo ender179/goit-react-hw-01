@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.my-projects {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.container-project {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.project-title-inner {
+    color: #007BFF;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; 
+}
