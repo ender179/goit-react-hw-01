@@ -1,7 +1,7 @@
 import React from 'react';  
 import FriendListItem from './FriendListItem';  
 import styles from './FriendList.module.css';  
-import friendsData from '../../data/friends.json'; // Підключаємо JSON з даними друзів  
+import friendsData from '../../data/friends.json'; 
 
 const FriendList = () => {  
   return (  
