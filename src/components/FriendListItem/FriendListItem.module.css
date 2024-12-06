@@ -33,3 +33,13 @@
     background-color: red;
     margin-right: 10px;
 }
+
+.onlineText {
+    color: green;
+    font-weight: bold;
+}
+
+.offlineText {
+    color: red;
+    font-weight: bold;
+}
