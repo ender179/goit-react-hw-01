@@ -10,3 +10,17 @@
 .offline {
     color: red;
 }
+
+.friendItem {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
