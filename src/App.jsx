@@ -1,13 +1,13 @@
-import React from 'react';  
-import FriendList from './components/FriendList/FriendList';  
-import friendsData from './data/friends.json';  
+import React from 'react';
+import FriendList from './components/FriendList/FriendList';
+import './styles.css';
 
-const App = () => {  
-    return (  
-        <div>  
-            <FriendList friends={friendsData} />  
-        </div>  
-    );  
-};  
+const App = () => {
+  return (
+    <div>
+      <FriendList />
+    </div>
+  );
+};
 
 export default App;
